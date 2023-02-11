@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginLaunchFragment">
+
+    <fragment
+        android:id="@+id/loginLaunchFragment"
+        tools:layout="@layout/fragment_login_launch"
+        android:name="com.example.foodbank.login.ui.LoginLaunchFragment"
+        android:label="LoginLaunchFragment" >
+        <action
+            android:id="@+id/action_loginLaunchFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.foodbank.login.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" /><action android:id="@+id/action_global_loginLaunchFragment" app:destination="@id/loginLaunchFragment"/>
+</navigation>
