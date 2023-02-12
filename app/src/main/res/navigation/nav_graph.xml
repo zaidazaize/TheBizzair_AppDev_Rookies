@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/loginLaunchFragment">
+    app:startDestination="@id/activeOrdersFragment">
 
     <fragment
         android:id="@+id/loginLaunchFragment"
@@ -18,5 +18,53 @@
         android:id="@+id/loginFragment"
         android:name="com.example.foodbank.login.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" /><action android:id="@+id/action_global_loginLaunchFragment" app:destination="@id/loginLaunchFragment"/>
+        tools:layout="@layout/fragment_login" >
+        <argument
+            android:name="UserType"
+            app:argType="string" />
+    </fragment>
+    <action android:id="@+id/action_global_loginLaunchFragment" app:destination="@id/loginLaunchFragment" />
+    <fragment
+        android:id="@+id/activeOrdersFragment"
+        android:name="com.example.foodbank.provider.activeOrdersFragment"
+        android:label="fragment_item_active_orders"
+        tools:layout="@layout/fragment_item_active_orders" />
+    <action android:id="@+id/action_global_activeOrdersFragment" app:destination="@id/activeOrdersFragment" />
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.example.foodbank.provider.OrderHistoryFragment"
+        android:label="fragment_order_history"
+        tools:layout="@layout/fragment_order_history" />
+    <action android:id="@+id/action_global_orderHistoryFragment" app:destination="@id/orderHistoryFragment" />
+    <fragment
+        android:id="@+id/createProviderOrderFragment"
+        android:name="com.example.foodbank.provider.CreateProviderOrderFragment"
+        android:label="fragment_create_provider_order"
+        tools:layout="@layout/fragment_create_provider_order" />
+    <action android:id="@+id/action_global_createProviderOrderFragment" app:destination="@id/createProviderOrderFragment" />
+    <fragment
+        android:id="@+id/allOrdersFragment"
+        android:name="com.example.foodbank.provider.AllOrdersFragment"
+        android:label="fragment_all_orders"
+        tools:layout="@layout/fragment_all_orders" />
+    <action android:id="@+id/action_global_allOrdersFragment" app:destination="@id/allOrdersFragment" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.foodbank.admin.userFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.foodbank.admin.ordersFragment"
+        android:label="fragment_item_orders"
+        tools:layout="@layout/fragment_item_orders" />
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.example.foodbank.customer.OrderListFragment"
+        android:label="fragment_item_list2"
+        tools:layout="@layout/fragment_item_list2" />
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.foodbank.admin.adminHomeFragment"
+        android:label="adminHomeFragment" />
 </navigation>
